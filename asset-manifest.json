@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "https://kw-kwix.github.io/pose-detector/static/js/main.ce707cce.js",
-    "static/js/377.164654ed.chunk.js": "https://kw-kwix.github.io/pose-detector/static/js/377.164654ed.chunk.js",
+    "main.js": "https://kw-kwix.github.io/pose-detector/static/js/main.510099fe.js",
+    "static/js/377.7d742aa7.chunk.js": "https://kw-kwix.github.io/pose-detector/static/js/377.7d742aa7.chunk.js",
     "service-worker.js": "https://kw-kwix.github.io/pose-detector/service-worker.js",
     "index.html": "https://kw-kwix.github.io/pose-detector/index.html",
-    "main.ce707cce.js.map": "https://kw-kwix.github.io/pose-detector/static/js/main.ce707cce.js.map",
-    "377.164654ed.chunk.js.map": "https://kw-kwix.github.io/pose-detector/static/js/377.164654ed.chunk.js.map"
+    "main.510099fe.js.map": "https://kw-kwix.github.io/pose-detector/static/js/main.510099fe.js.map",
+    "377.7d742aa7.chunk.js.map": "https://kw-kwix.github.io/pose-detector/static/js/377.7d742aa7.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ce707cce.js"
+    "static/js/main.510099fe.js"
   ]
 }
