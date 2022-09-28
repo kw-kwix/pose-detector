@@ -220,12 +220,14 @@ class HAR {
 	 * @param {string} pose
 	 */
 	async loadModel(pose) {
-		const modelUrl = `https://raw.githubusercontent.com/kw-kwix/HAR_model/main/model_js/CNN_${pose}_model_tfjs/model.json`;
+		const modelUrl = `https://raw.githubusercontent.com/kw-kwix/HAR_model/main/model_js/BiLS_${pose}_model_tfjs/model.json`;
 		this.model = await tf.loadLayersModel(modelUrl);
 		console.log("load model");
 		this.seq.splice(0, this.seq.length);
 		this.pose = pose;
 		this.count = 0;
+		this.leftAngle = 0;
+		this.rightAngle = 0;
 	}
 
 	/**
