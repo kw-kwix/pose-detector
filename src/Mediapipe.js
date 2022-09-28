@@ -2,9 +2,9 @@ import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import { Camera } from "@mediapipe/camera_utils";
 // eslint-disable-next-line no-unused-vars
 import { Pose, VERSION, Results } from "@mediapipe/pose";
-import { drawLandmarks } from "@mediapipe/drawing_utils";
+import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
 import { getDefaultLandmarks } from "./custom/customLandmark";
-// import { DEFAULT_POSE_CONNECTIONS } from "./custom/customPoseConnection";
+import { DEFAULT_POSE_CONNECTIONS } from "./custom/customPoseConnection";
 import { getInputArr } from "./service/input";
 import { detect } from "./service/tf";
 
@@ -41,10 +41,10 @@ const draw = async (ctx, results) => {
 	ctx.drawImage(results.image, 0, 0, cWidth, cHeight);
 
 	ctx.globalCompositeOperation = "source-over";
-	// drawConnectors(ctx, landmark, DEFAULT_POSE_CONNECTIONS, {	//랜드마크 선
-	// 	color: "#00FF00",
-	// 	lineWidth: 4,
-	// });
+	drawConnectors(ctx, landmark, DEFAULT_POSE_CONNECTIONS, {	//랜드마크 선
+		color: "#00FF00",
+		lineWidth: 4,
+	});
 	drawLandmarks(ctx, landmark, {	// 랜드마크 점
 		color: "#FF0000",
 		lineWidth: 2,
