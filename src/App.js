@@ -6,18 +6,18 @@ import Weather from "./Weather.js";
 import { RealTimeChart } from "./components/Chart";
 
 function App() {
-	let [score, setScore]=useState(0);
-	let [action, setAction]=useState('----');
+	let [score, setScore] = useState(0);
+	let [action, setAction] = useState('----');
 	let [count, setCount] = useState(har.count);
 	let [leftAngle, setLeftAngle] = useState(har.leftAngle);
 	let [rightAngle, setRightAngle] = useState(har.rightAngle);
 
-	function poseName (e) {
+	function poseName(e) {
 		setPose(e.target.value)
 		setAction(e.target.value)
 	}
-	
-	
+
+
 	const [pose, setPose] = React.useState(undefined);
 
 	/**
@@ -29,7 +29,7 @@ function App() {
 		if (pose) {
 			har.loadModel(pose);
 		}
-	},[pose]);
+	}, [pose]);
 
 	setInterval(() => {
 		setTimeout(() => {
@@ -43,30 +43,30 @@ function App() {
 	return (
 		<div className="App">
 			<div className="line">
-				<Clock/>
-				<Weather/>
+				<Clock />
+				<Weather />
 			</div>
 			<br></br>
-			<button className="w-btn w-btn-indigo" value="babel_curl" onClick={e=>poseName(e)}>babel curl</button>
-			<button className="w-btn w-btn-indigo" value="deadlift" onClick={e=>poseName(e)}>deadlift</button>
-			<button className="w-btn w-btn-indigo" value="knee_up" onClick={e=>poseName(e)}>knee up</button>
-			<button className="w-btn w-btn-indigo" value="leg_raise" onClick={e=>poseName(e)}>leg raise</button>
-			<button className="w-btn w-btn-indigo" value="over_head_press"onClick={e=>poseName(e)}>overhead press</button>
-			<button className="w-btn w-btn-indigo" value="side_crunch" onClick={e=>poseName(e)}>side crunch</button>
+			<button className="w-btn w-btn-indigo" value="babel_curl" onClick={e => poseName(e)}>babel curl</button>
+			<button className="w-btn w-btn-indigo" value="deadlift" onClick={e => poseName(e)}>deadlift</button>
+			<button className="w-btn w-btn-indigo" value="knee_up" onClick={e => poseName(e)}>knee up</button>
+			<button className="w-btn w-btn-indigo" value="leg_raise" onClick={e => poseName(e)}>leg raise</button>
+			<button className="w-btn w-btn-indigo" value="over_head_press" onClick={e => poseName(e)}>overhead press</button>
+			<button className="w-btn w-btn-indigo" value="side_crunch" onClick={e => poseName(e)}>side crunch</button>
 			{/* <button className="w-btn w-btn-indigo" value="side_lunge" onClick={e => poseName(e)}>side lunge</button> */}
-			<button className="w-btn w-btn-indigo" value="side_raise" onClick={e=>poseName(e)}>side raise</button>
-			<button className="w-btn w-btn-indigo" value="squat" onClick={e=>poseName(e)}>squat</button>
-			<div> 	
+			<button className="w-btn w-btn-indigo" value="side_raise" onClick={e => poseName(e)}>side raise</button>
+			<button className="w-btn w-btn-indigo" value="squat" onClick={e => poseName(e)}>squat</button>
+			<div>
 				<Mediapipe></Mediapipe>
 				<div className="detail">
 					<div> 현재 운동 : {action}</div>
 					<div> 운동 횟수 : {count}</div>
 					<div>
-					<span> 왼쪽 각도 : {leftAngle}</span>
-					<span> 오른쪽 각도 : {rightAngle}</span>
+						<span> 왼쪽 각도 : {leftAngle}</span>
+						<span> 오른쪽 각도 : {rightAngle}</span>
 					</div>
 					<div>
-						<div>정확도 : { score }%</div>  
+						<div>정확도 : {score}%</div>
 						<progress value={score} max="100"></progress>
 					</div>
 					<div>

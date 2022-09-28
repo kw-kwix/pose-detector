@@ -4,7 +4,7 @@ import './App.css';
 class Clock extends Component {
     constructor(props) {
         super(props)
-        this.state = {date: new Date()}
+        this.state = { date: new Date() }
     }
 
     componentDidMount() {
@@ -13,7 +13,7 @@ class Clock extends Component {
             1000
         )
     }
-    
+
     componentWillUnmount() {
         clearInterval(this.timerID)
     }
@@ -23,7 +23,7 @@ class Clock extends Component {
             date: new Date()
         })
     }
-    
+
     render() {
         return (
             <div >

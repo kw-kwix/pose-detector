@@ -39,8 +39,8 @@ const getPointAngle = async (landmark) => {
 	const v2 = cv2Vec(landmark, v2Id);
 
 	let v = tf.sub(v2, v1);
-   	v = tf.div(v, (tf.norm(v, 'euclidean', [-1,])).reshape([12,1])); 
-   	v = await v.array();
+	v = tf.div(v, (tf.norm(v, 'euclidean', [-1,])).reshape([12, 1]));
+	v = await v.array();
 
 	const newV1Id = [0, 1, 2, 3, 4, 6, 7, 8, 9, 10];
 	const newV2Id = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11];
@@ -74,5 +74,6 @@ export const detect = async (landmark) => {
 	const input = tf.expandDims(tf.tensor(har.seq), 0);
 	const result = await har.predict(input);
 	har.result = result[1];
+	console.log(har.result);
 	return result;
 };

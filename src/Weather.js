@@ -5,7 +5,7 @@ import './App.css';
 class Weather extends Component {
     constructor(props) {
         super(props);
-        this.state = { temp: 0, icon: '', weather : "", feels_like : 0, humidity : 0, wind_speed : '', country : '', city : '', loading: true }
+        this.state = { temp: 0, icon: '', weather: "", feels_like: 0, humidity: 0, wind_speed: '', country: '', city: '', loading: true }
     }
     componentDidMount() {
         const city = 'Seoul';
@@ -15,14 +15,14 @@ class Weather extends Component {
             .then(responseData => {
                 const data = responseData.data;
                 this.setState({
-                    temp: Math.round((data.main.temp-273.15)*10)/10,
-                    feels_like : Math.round((data.main.feels_like-273.15)*10)/10,
-                    humidity : Math.round(data.main.humidity*10)/10,
+                    temp: Math.round((data.main.temp - 273.15) * 10) / 10,
+                    feels_like: Math.round((data.main.feels_like - 273.15) * 10) / 10,
+                    humidity: Math.round(data.main.humidity * 10) / 10,
                     icon: data.weather[0].icon,
-                    weather : data.weather[0].main,
+                    weather: data.weather[0].main,
                     country: data.sys.country,
                     city: data.name,
-                    wind_speed:data.wind.speed,
+                    wind_speed: data.wind.speed,
                     loading: false
                 });
             })
@@ -37,7 +37,7 @@ class Weather extends Component {
             return (
                 <div>
                     <div>
-                        <img className="weatherImg" src={imgSrc} alt=""/>
+                        <img className="weatherImg" src={imgSrc} alt="" />
                         <div><b>{this.state.weather}</b></div>
                     </div>
                     <span>
@@ -47,7 +47,7 @@ class Weather extends Component {
                         <div className="temp2">
                             체감 : {this.state.feels_like}°
                         </div>
-                        <br/>
+                        <br />
                         <div className="temp2">
                             습도 : {this.state.humidity}%
                         </div>
@@ -56,7 +56,7 @@ class Weather extends Component {
                         <div className="temp2">
                             {this.state.city}.{this.state.country}
                         </div>
-                        <br/>
+                        <br />
                         <div className="temp2">
                             풍속 : {this.state.wind_speed}m/s
                         </div>
