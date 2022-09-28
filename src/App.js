@@ -8,9 +8,9 @@ import { RealTimeChart } from "./components/Chart";
 function App() {
 	let [score, setScore] = useState(0);
 	let [action, setAction] = useState('----');
-	let [count, setCount] = useState(har.count);
-	let [leftAngle, setLeftAngle] = useState(har.leftAngle);
-	let [rightAngle, setRightAngle] = useState(har.rightAngle);
+	// let [count, setCount] = useState(har.count);
+	// let [leftAngle, setLeftAngle] = useState(har.leftAngle);
+	// let [rightAngle, setRightAngle] = useState(har.rightAngle);
 
 	function poseName(e) {
 		setPose(e.target.value)
@@ -34,9 +34,9 @@ function App() {
 	setInterval(() => {
 		setTimeout(() => {
 			setScore(Math.round(har.result * 100));
-			setCount(har.count);
-			setLeftAngle(parseInt(har.leftAngle, 10));
-			setRightAngle(parseInt(har.rightAngle, 10));
+			// setCount(har.count);
+			// setLeftAngle(parseInt(har.leftAngle, 10));
+			// setRightAngle(parseInt(har.rightAngle, 10));
 		}, 100);
 	}, 100);
 
@@ -60,11 +60,11 @@ function App() {
 				<Mediapipe></Mediapipe>
 				<div className="detail">
 					<div> 현재 운동 : {action}</div>
-					<div> 운동 횟수 : {count}</div>
+					{/* <div> 운동 횟수 : {count}</div>
 					<div>
 						<span> 왼쪽 각도 : {leftAngle}</span>
 						<span> 오른쪽 각도 : {rightAngle}</span>
-					</div>
+					</div> */}
 					<div>
 						<div>정확도 : {score}%</div>
 						<progress value={score} max="100"></progress>
